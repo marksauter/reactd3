@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Swatch = ({ color: string, width: string, x: string }): func =>
+const Swatch = ({ color, width, x}: { color: string, width: string, x: string }) =>
   <rect width={width}
         height="20"
         x={x}

@@ -1,23 +1,22 @@
+/* @flow */
+
 import React, { Component } from 'react';
 
-const asyncComponent = (importComponent) => {
+const asyncComponent = (importComponent: Function) => {
 
   class AsyncComponent extends Component {
-
-    constructor(props) {
-      super(props);
-
-      this.state = {
-        component: null,
-      };
+    state = {
+      component: () => null,
     };
 
-    async componentDidMount() {
-      const { default: component } = await importComponent();
+    componentDidMount() {
+      (async () => {
+        const { default: component } = await importComponent();
 
-      this.setState({
-        component
-      });
+        this.setState({
+          component
+        });
+      })();
     }
 
     render() {

@@ -1,9 +1,14 @@
 [ignore]
+.*/build/.*
 
 [include]
+<PROJECT_ROOT>/src/
 
 [libs]
+<PROJECT_ROOT>/lib/
 
 [lints]
 
 [options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
