@@ -2,7 +2,9 @@
 
 import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+
 import asyncComponent from 'hocs/AsyncComponent.js';
+
 import logo from './logo.svg';
 import './App.css';
 

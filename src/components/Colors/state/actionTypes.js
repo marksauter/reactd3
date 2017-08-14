@@ -1,0 +1,2 @@
+export const REVERSE_SWATCHES = 'REVERSE_SWATCHES';
+
