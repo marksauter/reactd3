@@ -1,10 +1,12 @@
+// @flow
+
 import { combineReducers } from 'redux';
 
-import { colors } from 'components/Colors';
+import { reducer as reactd3 } from 'scenes/ReactD3';
 
-const appReducer = combineReducers({
-  colors,
+const reducer = combineReducers({
+  reactd3,
 });
 
-export default appReducer;
+export default reducer;
 

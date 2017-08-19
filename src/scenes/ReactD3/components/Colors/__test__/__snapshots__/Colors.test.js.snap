@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Colors --- Snapshot matches snapshot 1`] = `
+<g
+  onClick={[Function]}
+>
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#1f77b4",
+      }
+    }
+    width={30}
+    x={570}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#aec7e8",
+      }
+    }
+    width={30}
+    x={540}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#ff7f0e",
+      }
+    }
+    width={30}
+    x={510}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#ffbb78",
+      }
+    }
+    width={30}
+    x={480}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#2ca02c",
+      }
+    }
+    width={30}
+    x={450}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#98df8a",
+      }
+    }
+    width={30}
+    x={420}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#d62728",
+      }
+    }
+    width={30}
+    x={390}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#ff9896",
+      }
+    }
+    width={30}
+    x={360}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#9467bd",
+      }
+    }
+    width={30}
+    x={330}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#c5b0d5",
+      }
+    }
+    width={30}
+    x={300}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#8c564b",
+      }
+    }
+    width={30}
+    x={270}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#c49c94",
+      }
+    }
+    width={30}
+    x={240}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#e377c2",
+      }
+    }
+    width={30}
+    x={210}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#f7b6d2",
+      }
+    }
+    width={30}
+    x={180}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#7f7f7f",
+      }
+    }
+    width={30}
+    x={150}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#c7c7c7",
+      }
+    }
+    width={30}
+    x={120}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#bcbd22",
+      }
+    }
+    width={30}
+    x={90}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#dbdb8d",
+      }
+    }
+    width={30}
+    x={60}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#17becf",
+      }
+    }
+    width={30}
+    x={30}
+  />
+  <rect
+    height="20"
+    style={
+      Object {
+        "fill": "#9edae5",
+      }
+    }
+    width={30}
+    x={0}
+  />
+</g>
+`;

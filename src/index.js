@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from 'services/registerServiceWorker';
 import { Provider } from 'react-redux';
 
 import store from 'state/store';
 
-import './index.css';
+import 'semantic-ui-css/semantic.min.css';
 
 import App from './App';
 
