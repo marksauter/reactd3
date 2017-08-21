@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -17,7 +17,6 @@ type Props = {
 export class Colors extends Component {
   static defaultProps = {
     width: 0,
-    reversed: false,
   };
 
   colors = d3.schemeCategory20;
@@ -60,7 +59,7 @@ export class Colors extends Component {
 }
 
 const mapStateToProps = state => ({
-  reversed: state.colors.reversed,
+  reversed: state.reactd3.colors.reversed,
 });
 
 const mapDispatchToProps = dispatch =>

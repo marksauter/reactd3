@@ -1,8 +1,7 @@
-/* @flow */
+// @flow
 
 import * as d3 from 'd3';
-import includes from 'lodash/includes';
-import find from 'lodash/find';
+import { find, isNull, groupBy } from 'lodash';
 
 const cleanIncomes = d => ({
   countyName: d['Name'],
@@ -45,27 +44,35 @@ const cleanCountyNames = d => ({
   name: d.name,
 });
 
-const incomesByCountyNames = countyNames => d =>
-  includes(countyNames, { name: d['countyName'] });
+const findCountyNameIn = (collection) => (d: Object) =>
+  find(collection, { name: d['countyName'] });
 
-const findCountyName = countyNames => d =>
-  find(countyNames, { name: d['countyName'] });
-
+const removeNullEntries = d => !isNull(d);
 
 export const loadAllData = (callback: Function = () => null) => {
   d3.queue()
     .defer(d3.json, 'data/us.json')
     .defer(d3.csv, 'data/us-county-names-normalized.csv', cleanCountyNames)
-    .defer(d3.csv, 'data/county-median-incomes.csv', cleanIncomes)
+    .defer(d3.csv, 'data/county-median-incomes.csv', d => removeNullEntries(cleanIncomes(d)))
     .defer(d3.csv, 'data/h1bs-2012-2016-shortened.csv', cleanSalary)
     .defer(d3.csv, 'data/us-state-names.tsv', cleanUSStateName)
-    .await((error, us, countyNames, medianIncome, techSalaries, USstateNames) => {
-      const
-      const medianIncomesMap =
-        medianIncomes.filter(d => find(countyNames, { name: d['countyName'] }))
-                     .map(d => {
+    .await((error, us, countyNames, medianIncomes, techSalaries, USstateNames) => {
+      const findCountyName = findCountyNameIn(countyNames);
+      
+      const medianIncomesWithCountyId =
+        medianIncomes.filter(findCountyName)
+                     .map(d => ({ ...d, countyID: findCountyName(d).id }));
+      const medianIncomesByCountyId =
+        medianIncomes.reduce((map, d) => ({ ...map, [d.countyID]: d }), {});
 
-                     })
+      callback({
+        usTopoJson: us,
+        countyNames,
+        medianIncomes: medianIncomesByCountyId,
+        medianIncomesByCounty: groupBy(medianIncomesWithCountyId, 'countyName'),
+        medianIncomesByUSState: groupBy(medianIncomesWithCountyId, 'USstate'),
+        USstateNames,
+      });
     });
 }
 

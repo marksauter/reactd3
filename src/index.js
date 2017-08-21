@@ -8,6 +8,8 @@ import store from 'state/store';
 
 import App from './App';
 
+import './styles.css';
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>

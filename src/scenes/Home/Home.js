@@ -9,17 +9,18 @@ type Props = {
   className: string,
 }
 
-export const About = (props: Props) => {
+export const Home = (props: Props) => {
   const { className } = props;
-  const classes = cx('About', className);
+  const classes = cx('Home', className);
 
   return (
     <div className={classes}>
       <AppMenu />
-      About
+      Home
     </div>
   );
 }
 
-export default About;
+
+export default Home;
 

@@ -8,7 +8,7 @@ export type DataFetchRequest = { type: 'DATA_FETCH_REQUEST' };
 export type DataFetchSuccess = { type: 'DATA_FETCH_SUCCESS', data: Object }
 export type DataFetchFailure = { type: 'DATA_FETCH_FAILURE', error: Object }
 
-export type DataFetchAction =
+export type Action =
   | DataFetchRequest
   | DataFetchSuccess
   | DataFetchFailure;
