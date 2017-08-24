@@ -16,14 +16,10 @@ import { authUser } from './services/session/actions';
 import './styles.css';
 
 type Props = {
-  className: string,
+  className?: string,
 }
 
 class Login extends React.Component<Props> {
-  static defaultProps = {
-    className: '',
-  }
-
   handleSubmit = async (credentials) => {
     try {
       await(auth.login(credentials));
@@ -34,11 +30,12 @@ class Login extends React.Component<Props> {
   }
 
   render() {
-    const { authenticated, className, ...rest } = this.props;
+    const { authenticated, className, location, ...rest } = this.props;
     const classes = cx('Login', className);
+    const { from } = location.state || { from: '/' };
 
     if (authenticated) {
-      return <Redirect to="/" />;
+      return <Redirect to={from} />;
     }
 
     return (
