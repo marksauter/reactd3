@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
+import { BrowserRouter as Router } from 'react-router-dom';
 import PrivateRoute from 'components/PrivateRoute';
 
 import asyncComponent from 'components/AsyncComponent';
@@ -20,30 +21,32 @@ class App extends Component {
     const { auth } = this.props;
 
     return (
-      <Switch>
-        <PrivateRoute
-          auth={auth}
-          redirect="/login"
-          exact
-          path="/"
-          component={AsyncHome}
-        />
-        <PrivateRoute
-          auth={auth}
-          redirect="/login"
-          exact
-          path="/about"
-          component={AsyncAbout}
-        />
-        <PrivateRoute
-          auth={auth}
-          redirect="/login"
-          exact
-          path="/reactd3"
-          component={AsyncReactD3}
-        />
-        <Route exact path="/login" component={AsyncLogin} />
-      </Switch>
+      <Router>
+        <Switch>
+          <PrivateRoute
+            auth={auth}
+            redirect="/login"
+            exact
+            path="/"
+            component={AsyncHome}
+          />
+          <PrivateRoute
+            auth={auth}
+            redirect="/login"
+            exact
+            path="/about"
+            component={AsyncAbout}
+          />
+          <PrivateRoute
+            auth={auth}
+            redirect="/login"
+            exact
+            path="/reactd3"
+            component={AsyncReactD3}
+          />
+          <Route exact path="/login" component={AsyncLogin} />
+        </Switch>
+      </Router>
     );
   }
 }

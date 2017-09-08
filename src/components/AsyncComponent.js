@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
+import { Dimmer, Loader, Segment } from 'semantic-ui-react';
 
 const asyncComponent = (importComponent: Function) => {
 
@@ -24,7 +25,11 @@ const asyncComponent = (importComponent: Function) => {
 
       return C
         ? <C {...this.props} />
-        : null;
+        : <Segment>
+            <Dimmer active>
+              <Loader />
+            </Dimmer>
+          </Segment>;
     }
 
   }
